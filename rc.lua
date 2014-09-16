@@ -144,6 +144,17 @@ globalkeys = awful.util.table.join(
 	end),
 	awful.key({ }, "XF86AudioRaiseVolume", function ()
 		awful.util.spawn("amixer set Master 2dB+")
+	end),
+
+	-- music
+	awful.key({ }, "XF86AudioPrev", function ()
+		awful.util.spawn("ncmpcpp prev")
+	end),
+	awful.key({ }, "XF86AudioPlay", function ()
+		awful.util.spawn("ncmpcpp toggle")
+	end),
+	awful.key({ }, "XF86AudioNext", function ()
+		awful.util.spawn("ncmpcpp next")
 	end)
 )
 
