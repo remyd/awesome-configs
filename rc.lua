@@ -60,8 +60,8 @@ for s = 1, screen.count() do
 	wibox[s].widgets = {
 		{
 			taglist[s],
-			promptbox[s],
 			layoutbox[s],
+			promptbox[s],
 			layout = awful.widget.layout.horizontal.leftright
 		},
 		textclock,
