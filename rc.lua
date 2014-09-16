@@ -129,21 +129,21 @@ globalkeys = awful.util.table.join(
 
 	-- screen brightness
 	awful.key({ }, "XF86MonBrightnessDown", function ()
-		awful.util.spawn("xbacklight -dec 10")
+		awful.util.spawn("dbri -d 5")
 	end),
 	awful.key({ }, "XF86MonBrightnessUp", function ()
-		awful.util.spawn("xbacklight -inc 10")
+		awful.util.spawn("dbri -i 5")
 	end),
 
 	-- volume
 	awful.key({ }, "XF86AudioMute", function ()
-		awful.util.spawn("amixer set Master toggle")
+		awful.util.spawn("dvol -t")
 	end),
 	awful.key({ }, "XF86AudioLowerVolume", function ()
-		awful.util.spawn("amixer set Master 2dB-")
+		awful.util.spawn("dvol -d 2")
 	end),
 	awful.key({ }, "XF86AudioRaiseVolume", function ()
-		awful.util.spawn("amixer set Master 2dB+")
+		awful.util.spawn("dvol -i 2")
 	end),
 
 	-- music
