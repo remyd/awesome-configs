@@ -174,6 +174,11 @@ globalkeys = awful.util.table.join(
 	end),
 	awful.key({ }, "XF86AudioNext", function ()
 		awful.util.spawn("ncmpcpp next")
+	end),
+
+	-- eject
+	awful.key({ }, "XF86Eject", function ()
+		awful.util.spawn("eject")
 	end)
 )
 
