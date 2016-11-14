@@ -253,6 +253,11 @@ awful.rules.rules = {
 
 -- signals
 client.add_signal("manage", function (c, startup)
+	-- add a titlebar if the layout is floating
+	if (awful.layout.get(c.screen) == awful.layout.suit.floating and not c.titlebar and c.class ~= "Xmessage") then
+		awful.titlebar.add(c, {modkey = modkey })
+	end
+
 	-- enable sloppy focus
 	c:add_signal("mouse::enter", function (c)
 		if awful.client.focus.filter(c) then
