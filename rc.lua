@@ -4,8 +4,11 @@ require("awful.autofocus")
 require("awful.rules")
 -- theme handling library
 require("beautiful")
+-- teardrop terminal
+require("teardrop")
 
--- define the default modkey
+-- define the default modifier keys
+altkey = "Mod1"
 modkey = "Mod4"
 
 -- load theme
@@ -179,6 +182,11 @@ globalkeys = awful.util.table.join(
 	-- eject
 	awful.key({ }, "XF86Eject", function ()
 		awful.util.spawn("eject")
+	end),
+
+	-- teardrop terminal
+	awful.key({ altkey }, "Tab", function()
+		teardrop.toggle(terminal)
 	end)
 )
 
