@@ -2,7 +2,8 @@
 -- Default awesome theme --
 ---------------------------
 
-confdir = awful.util.getdir("config")
+local awful = require("awful")
+confdir = awful.util.get_configuration_dir()
 theme = {}
 
 theme.font          = "terminus 8"
