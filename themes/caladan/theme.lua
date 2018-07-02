@@ -49,6 +49,7 @@ theme.titlebar_maximized_button_normal_active = confdir .. "/icons/titlebar/maxi
 theme.titlebar_maximized_button_focus_active  = confdir .. "/icons/titlebar/maximized_focus_active.png"
 
 theme.clock = confdir .. "/icons/clock.png"
+theme.calendar = confdir .. "/icons/calendar.png"
 
 -- You can use your own command to set your wallpaper
 theme.wallpaper_cmd = { "awsetbg /home/remy/images/wallpapers/rescape_starstrooper.jpg" }

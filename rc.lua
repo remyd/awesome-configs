@@ -39,6 +39,13 @@ local clock_background = wibox.container.background(textclock, beautiful.bg_focu
 clock_background.fg = beautiful.fg_focus
 local clock_widget = wibox.container.margin(clock_background, 0, 10, 5, 5)
 
+-- calendar widget
+local calendar = wibox.widget.textclock("%d %b")
+local calendar_icon = wibox.widget.imagebox(beautiful.calendar)
+local calendar_background = wibox.container.background(calendar, beautiful.bg_focus, gears.shape.rectangle)
+calendar_background.fg = beautiful.fg_focus
+local calendar_widget = wibox.container.margin(calendar_background, 0, 10, 5, 5)
+
 -- handle runtime errors after startup
 do
   local in_error = false
@@ -123,6 +130,8 @@ awful.screen.connect_for_each_screen(function(screen)
     nil,
     {
       layout = wibox.layout.fixed.horizontal,
+      calendar_icon,
+      calendar_widget,
       clock_icon,
       clock_widget,
     }
