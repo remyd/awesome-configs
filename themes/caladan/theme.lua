@@ -6,10 +6,11 @@ local awful = require("awful")
 confdir = awful.util.get_configuration_dir()
 theme = {}
 
-theme.font          = "terminus 8"
+theme.font          = "Roboto Bold 10"
+theme.taglist_font  = "Roboto Condensed BOLD 9.5"
 
-theme.bg_normal     = "#080808"
-theme.bg_focus      = "#535d6c"
+theme.bg_normal     = "#303030"
+theme.bg_focus      = "#303030"
 theme.bg_urgent     = "#ff0000"
 theme.bg_minimize   = "#444444"
 
@@ -22,34 +23,6 @@ theme.border_width  = "1"
 theme.border_normal = "#000000"
 theme.border_focus  = "#535d6c"
 theme.border_marked = "#91231c"
-
--- There are other variable sets
--- overriding the default one when
--- defined, the sets are:
--- [taglist|tasklist]_[bg|fg]_[focus|urgent]
--- titlebar_[bg|fg]_[normal|focus]
--- tooltip_[font|opacity|fg_color|bg_color|border_width|border_color]
--- mouse_finder_[color|timeout|animate_timeout|radius|factor]
--- Example:
---theme.taglist_bg_focus = "#ff0000"
-
--- Display the taglist squares
-theme.taglist_squares_sel   = "/usr/share/awesome/themes/default/taglist/squarefw.png"
-theme.taglist_squares_unsel = "/usr/share/awesome/themes/default/taglist/squarew.png"
-
-theme.tasklist_floating_icon = "/usr/share/awesome/themes/default/tasklist/floatingw.png"
-
--- Variables set for theming the menu:
--- menu_[bg|fg]_[normal|focus]
--- menu_[border_color|border_width]
-theme.menu_submenu_icon = "/usr/share/awesome/themes/default/submenu.png"
-theme.menu_height = "15"
-theme.menu_width  = "100"
-
--- You can add as many variables as
--- you wish and access them by using
--- beautiful.variable in your rc.lua
---theme.bg_widget = "#cc0000"
 
 -- Define the image to load
 theme.titlebar_close_button_normal = confdir .. "/icons/titlebar/close_normal.png"
@@ -75,6 +48,8 @@ theme.titlebar_maximized_button_focus_inactive  = confdir .. "/icons/titlebar/ma
 theme.titlebar_maximized_button_normal_active = confdir .. "/icons/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active  = confdir .. "/icons/titlebar/maximized_focus_active.png"
 
+theme.clock = confdir .. "/icons/clock.png"
+
 -- You can use your own command to set your wallpaper
 theme.wallpaper_cmd = { "awsetbg /home/remy/images/wallpapers/rescape_starstrooper.jpg" }
 
@@ -95,4 +70,3 @@ theme.layout_dwindle = "/usr/share/awesome/themes/default/layouts/dwindlew.png"
 theme.awesome_icon = "/usr/share/awesome/icons/awesome16.png"
 
 return theme
--- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:textwidth=80

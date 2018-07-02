@@ -33,7 +33,11 @@ awful.layout.layouts = {
 }
 
 -- time widget
-textclock = wibox.widget.textclock()
+local textclock = wibox.widget.textclock("%H:%M")
+local clock_icon = wibox.widget.imagebox(beautiful.clock)
+local clock_background = wibox.container.background(textclock, beautiful.bg_focus, gears.shape.rectangle)
+clock_background.fg = beautiful.fg_focus
+local clock_widget = wibox.container.margin(clock_background, 0, 10, 5, 5)
 
 -- handle runtime errors after startup
 do
@@ -87,7 +91,7 @@ awful.screen.connect_for_each_screen(function(screen)
   set_wallpaper(screen)
 
   -- taglist definition
-  awful.tag({ "term", "dev", "web", "im", "media", "float", 7, 8, 9 }, screen, awful.layout.layouts[1])
+  awful.tag({ "TERM", "DEV", "WEB", "IM", "MEDIA", "FLOAT", 7, 8, 9 }, screen, awful.layout.layouts[1])
 
   -- promptbox
   screen.promptbox = awful.widget.prompt()
@@ -119,7 +123,8 @@ awful.screen.connect_for_each_screen(function(screen)
     nil,
     {
       layout = wibox.layout.fixed.horizontal,
-      textclock,
+      clock_icon,
+      clock_widget,
     }
   }
 end)
