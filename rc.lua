@@ -28,7 +28,6 @@ awful.layout.layouts = {
   awful.layout.suit.tile,
   awful.layout.suit.tile.top,
   awful.layout.suit.max,
-  awful.layout.suit.max.fullscreen,
   awful.layout.suit.floating
 }
 
@@ -116,7 +115,7 @@ awful.screen.connect_for_each_screen(function(screen)
   screen.taglist = awful.widget.taglist(screen, awful.widget.taglist.filter.all, taglist_buttons)
 
   -- create the wibox
-  screen.wibox = awful.wibar({ position = "top", screen = screen })
+  screen.wibox = awful.wibar({ position = "top", screen = screen, height = 32 })
 
   -- add widgets to the wibox
   screen.wibox:setup {
