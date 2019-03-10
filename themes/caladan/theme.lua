@@ -52,7 +52,7 @@ theme.clock = confdir .. "/icons/clock.png"
 theme.calendar = confdir .. "/icons/calendar.png"
 
 -- You can use your own command to set your wallpaper
-theme.wallpaper_cmd = { "awsetbg /home/remy/images/wallpapers/rescape_starstrooper.jpg" }
+theme.wallpaper = "/home/remy/images/wallpapers/fog_forest.jpg"
 
 -- You can use your own layout icons like this:
 theme.layout_floating = confdir .. "/icons/layouts/floating.png"
