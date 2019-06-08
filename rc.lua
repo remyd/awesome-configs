@@ -203,6 +203,7 @@ globalkeys = awful.util.table.join(
 
   -- prompt
   awful.key({ modkey }, "r", function () awful.screen.focused().promptbox:run() end),
+  awful.key({ modkey, "Shift" }, "r", function () awful.spawn("rofi -show drun") end),
 
   -- screen brightness
   awful.key({ }, "XF86MonBrightnessDown", function () awful.spawn("dbri -d 5") end),
