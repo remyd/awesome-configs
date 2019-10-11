@@ -68,7 +68,7 @@ function toggle(prog, edge, height, screen)
         dropdown[prog] = {}
 
         -- Add unmanage signal for dropdown programs
-        capi.client.add_signal("unmanage", function (c)
+        capi.client.connect_signal("unmanage", function (c)
             for scr, cl in pairs(dropdown[prog]) do
                 if cl == c then
                     dropdown[prog][scr] = nil
@@ -83,7 +83,7 @@ function toggle(prog, edge, height, screen)
             dropdown[prog][screen] = c
 
             -- Float client
-            awful.client.floating.set(c, true)
+            c.floating = true
 
             -- Get screen geometry
             screengeom = capi.screen[screen].workarea
@@ -123,20 +123,20 @@ function toggle(prog, edge, height, screen)
             capi.client.focus = c
 
             -- Remove signal
-            capi.client.remove_signal("manage", spawnw)
+            capi.client.disconnect_signal("manage", spawnw)
         end
 
         -- Add signal
-        capi.client.add_signal("manage", spawnw)
+        capi.client.connect_signal("manage", spawnw)
 
         -- Spawn program
-        awful.util.spawn(prog, false)
+        awful.spawn(prog, false)
     else
         -- Get client
         c = dropdown[prog][screen]
 
         -- Switch the client to the current workspace
-        awful.client.movetotag(awful.tag.selected(screen), c)
+        c:move_to_tag(screen.selected_tag, c)
 
         -- Focus and raise if not hidden
         if c.hidden then
