@@ -11,7 +11,7 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 -- teardrop
-local teardrop = require('teardrop')
+local teardrop = require("teardrop")
 
 -- define the default modifier keys
 altkey = "Mod1"
@@ -208,7 +208,7 @@ globalkeys = awful.util.table.join(
   awful.key({ modkey, "Shift" }, "r", function () awful.spawn("rofi -show drun") end),
 
   -- teardrop
-  awful.key({ modkey }, "`", function () teardrop.toggle('kitty') end),
+  awful.key({ modkey }, "`", function () teardrop('kitty', nil, 0.3) end),
 
   -- screen brightness
   awful.key({ }, "XF86MonBrightnessDown", function () awful.spawn("dbri -d 5") end),

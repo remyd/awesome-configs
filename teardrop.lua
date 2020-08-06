@@ -38,11 +38,6 @@ local capi = {
     screen = screen
 }
 
-
--- Teardrop: Drop down (quake-like) applications for the awesome window manager
-module("teardrop")
-
-
 local dropdown = {}
 
 -- Drop down (quake-like) application toggle
@@ -149,3 +144,5 @@ function toggle(prog, edge, height, screen)
         end
     end
 end
+
+return toggle
